@@ -6,15 +6,22 @@
             <td>Nombre</td>
             <td>Precio</td>
             <td>Stock</td>
+            <td>Cantidad</td>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let burger of burgers" [ngClass]="{'clearance': burger.clearance}">
-            <td><img [src]="burger.img" [alt]="burger.name"></td>
+            <td><img width="90" class="img-thumbnail" [src]="burger.img" [alt]="burger.name"></td>
             <td>{{burger.type}}</td>
             <td>{{burger.name}}</td>
             <td>{{burger.price | currency}}</td>
-            <td><span *ngIf="burger.stock===0" class="badge rounded-pill text-bg-danger">Sin Stock</span></td>
+            <td><span *ngIf="burger.stock === 0" class="badge rounded-pill text-bg-danger">Sin Stock</span></td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="downQuantity(burger)"> - </button>
+                <input type="text" [(ngModel)]="burger.quantity" (keyup)="changeQuantity($event ,burger)">
+                  <!---  {{burger.quantity}} --->
+                <button class="btn btn-primary btn-sm" (click)="upQuantity(burger)"> + </button>
+            </td>
         </tr>
     </tbody>
 </table>

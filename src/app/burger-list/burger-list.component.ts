@@ -16,6 +16,7 @@ export class BurgerListComponent implements OnInit {
       stock: 15,
       img: 'assets/images/cheddar_burger.jpg',
       clearance: false,
+      quantity: 0,
     },
     {
       type: 'Carne',
@@ -24,6 +25,7 @@ export class BurgerListComponent implements OnInit {
       stock: 15,
       img: 'assets/images/cheddar_burger.jpg',
       clearance: true,
+      quantity: 0,
     },
     {
       type: 'Veggie',
@@ -32,6 +34,7 @@ export class BurgerListComponent implements OnInit {
       stock: 10,
       img: 'assets/images/cheddar_burger.jpg',
       clearance: true,
+      quantity: 0,
     },
     {
       type: 'Veggie',
@@ -40,6 +43,7 @@ export class BurgerListComponent implements OnInit {
       stock: 0,
       img: 'assets/images/cheddar_burger.jpg',
       clearance: false,
+      quantity: 0,
     },
   ];
   
@@ -48,6 +52,21 @@ export class BurgerListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  downQuantity(burger: Burger): void {
+    if(burger.quantity > 0)
+      burger.quantity--;
+  }
+
+  upQuantity(burger: Burger): void {
+    if(burger.quantity < burger.stock) {
+      burger.quantity++;
+    }
+  }
+
+  changeQuantity(event: Event, burger: Burger): void {
+    console.log(event.target);
   }
 
 }
