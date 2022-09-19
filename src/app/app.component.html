@@ -7,31 +7,23 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Burgas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Arma tu burga!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Contacto</a>
+          <a class="nav-link active" [routerLink]="['/about']">Contacto</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <div class="conteiner">
-  <div class="row">
-    <div class="col-8">
-      <app-burger-list>
-        
-      </app-burger-list>
-    </div>
-    <div class="col-4">
-      Carrito
-    </div>
-  </div>
+  <router-outlet>
+    
+  </router-outlet>
+  
 </div>
+
+<!--<app-burgerlab-burgers>
+
+</app-burgerlab-burgers>-->
 <footer>{{title}} 2022</footer>

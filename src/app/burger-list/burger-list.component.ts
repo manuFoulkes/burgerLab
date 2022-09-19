@@ -53,7 +53,7 @@ export class BurgerListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+ 
   downQuantity(burger: Burger): void {
     if(burger.quantity > 0)
       burger.quantity--;

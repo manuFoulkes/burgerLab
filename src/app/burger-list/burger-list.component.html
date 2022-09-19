@@ -1,4 +1,6 @@
-<table class="table">
+
+<h3>Lista de Hamburguesas</h3>
+<table class="table text center">
     <thead>
         <tr>
             <td>Imagen</td>
@@ -6,7 +8,7 @@
             <td>Nombre</td>
             <td>Precio</td>
             <td>Stock</td>
-            <td>Cantidad</td>
+            <td>Cantidad</td> 
         </tr>
     </thead>
     <tbody>
@@ -19,7 +21,7 @@
             <td>
                 <button class="btn btn-primary btn-sm" (click)="downQuantity(burger)"> - </button>
                 <input type="text" [(ngModel)]="burger.quantity" (keyup)="changeQuantity($event ,burger)">
-                  <!---  {{burger.quantity}} --->
+                <!---  {{burger.quantity}} --->
                 <button class="btn btn-primary btn-sm" (click)="upQuantity(burger)"> + </button>
             </td>
         </tr>
